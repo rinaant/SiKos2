@@ -1,9 +1,9 @@
 <?php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'sikos_db');
-define('APP_URL', 'http://localhost/sikos');
+define('DB_HOST', getenv('DB_HOST') ?: 'sikos-db');
+define('DB_USER', getenv('DB_USER') ?: 'sikos');
+define('DB_PASS', getenv('DB_PASS') ?: '');
+define('DB_NAME', getenv('DB_NAME') ?: 'sikos_db');
+define('APP_URL', rtrim(getenv('APP_URL') ?: 'http://localhost:8083/sikos', '/'));
 define('UPLOAD_BAYAR', __DIR__ . '/../../public/uploads/pembayaran/');
 define('UPLOAD_KAMAR', __DIR__ . '/../../public/uploads/kamar/');
 define('UPLOAD_URL_BAYAR', APP_URL . '/public/uploads/pembayaran/');
